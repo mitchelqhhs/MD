@@ -1,8 +1,8 @@
 import React from 'react';
-import Toggle from './Toggle'
 import './Action.css';
+import SetStateButton from './SetStateButton';
 
-const Action = ({ action }) => {
+const Action = ({ action, arduino, token }) => {
 
     // console.log("item")
 
@@ -17,7 +17,7 @@ const Action = ({ action }) => {
                 </div>
                 
                 <div className="col col-5">
-                    <Toggle action={action} />
+                    <SetStateButton action={action} arduino={arduino} token={token} id={action.name}/>
                 </div>
             </div>
 

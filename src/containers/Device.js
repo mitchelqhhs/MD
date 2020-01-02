@@ -2,20 +2,18 @@ import React from 'react';
 import Dropdown from '../components/Dropdown'
 import Action from '../components/Action'
 
-const Device = ({ device, group, groups }) => {
-
-
+const Device = ({ device, group, groups, token }) => {
 
     const actionList = device.functionalities.map((action, i) => {
             return (
                 <Action
                     key={i}
                     action={action}
+                    arduino={device}
+                    token={token}
                 />
             );
     });
-
-
 
     console.log(groups);
     return (

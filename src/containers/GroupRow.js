@@ -2,9 +2,29 @@ import React from 'react';
 
 const GroupRow = ({ group, token }) => {
 
+    // const changeState = (token) => {
+    //     var getobj = {
+    //         method: 'PUT',
+    //         headers: {
+    //             authorization: "bearer " + token
+    //         },
+    //         body: JSON.stringify({
+    //             'name': "testName"
+    //         })
+    //     };
+
+    //     fetch('http://localhost:8000/group/ongesorteerd', getobj)
+    //         .then(function (res) {
+    //             return res.json();
+    //         })
+    //         .then(function (resJson) {
+    //             console.log("changed name", resJson)
+    //         });
+    // }
+
     const changeState = (token) => {
         var getobj = {
-            method: 'GET',
+            method: 'POST',
             headers: {
                 authorization: "bearer " + token
             },
@@ -13,12 +33,10 @@ const GroupRow = ({ group, token }) => {
             })
         };
 
-        fetch('http://localhost:8000/group/ongesorteerd', getobj)
+        fetch('http://localhost:8000/group/', getobj)
             .then(function (res) {
-                return res.json();
-            })
-            .then(function (resJson) {
-                console.log("changed name", resJson)
+                console.log(res);
+                console.log("Added Group")
             });
     }
 

@@ -22,14 +22,7 @@ class App extends Component {
     }
   }
 
-  // Token:
-  //   eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiMTIzQDEyMy5ubCIsImh1aXNjZW50cmFsZUlkIjoidGVzdC1pZCIsImV4cCI6MTU3NzUzMzk0NX0.qn46nQifhFh5naZjFkDGZ5vIpW8QPxGjzNUMXH_eWVs
-  //   voor:
-  //   123@123.nl
-  //   123
-
   componentDidMount() {
-    // this.setState({ loggedIn: false });
     if (this.state.token) {
       this.getStatus(this.state.token);
     }
@@ -39,18 +32,17 @@ class App extends Component {
 
     if (this.state.token) {
 
-
-      const { groups, route, selectedDevice, selectedGroup } = this.state; // so we dont have to type this.state.groups etc every time.
+      const { groups, route, selectedDevice, selectedGroup, token } = this.state; // so we dont have to type this.state.groups etc every time.
 
       const routing = () => { //we check which route we should render
         switch (route) {
           case 'options': return <Options />;
-          case 'groups': return <Groups groups={groups} token={this.state.token} />;
-          case 'home': return <Carousel groups={groups} setSelectedDevice={this.setSelectedDevice} token={this.state.token} />;
+          case 'groups': return <Groups groups={groups} token={token} />;
+          case 'home': return <Carousel groups={groups} setSelectedDevice={this.setSelectedDevice} token={token} />;
           case 'login': return <Login login={this.login} onRouteChange={this.onRouteChange} />;
           case 'register': return <Register register={this.register} onRouteChange={this.onRouteChange} />;
-          case 'device': return <Device device={selectedDevice} group={selectedGroup} groups={groups} />;
-          default: return <Groups groups={groups} token={this.state.token} />;
+          case 'device': return <Device device={selectedDevice} group={selectedGroup} groups={groups} token={token} />;
+          default: return <Groups groups={groups} token={token} />;
         }
       }
 

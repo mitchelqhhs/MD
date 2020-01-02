@@ -1,46 +1,37 @@
 import React from 'react';
 import './Toggle.css';
 
-const Toggle = ({ action, status }) => {
-
-    let html;
-
-    console.log(action.type)
-
-
-    switch (action.type) {
-        case "boolean":
-            html = <div className="switchToggle">
-                <input type="checkbox" id={action.name}></input>
-                <label htmlFor={action.name}></label>
-            </div>
-            break;
-        case "info":
-            html = <div>
-                <h2>{action.status}</h2>
-            </div>
-            break;
-        case "slider":
-            html = <div>
-                <h2>slider{action.status}</h2>
-            </div>
-            break;
-        case "int":
-            html = <div className="qty">
-                <span className="minus bg-dark">-</span>
-                <input type="number" className="count" name={action.name} value={action.status}></input>
-                <span className="plus bg-dark">+</span>
-            </div>
-            break;
-        default:
-            html = <div>Oops Error happen</div>
+const Toggle = ({ action , arduino, token, id}) => {
+    
+    const performAction = (token) => {
+        changeState(token);
     }
 
 
+    const changeState = (token) => {
+        var getobj = {
+            method: 'PUT',
+            headers: {
+                authorization: "bearer " + token
+            },
+            body: JSON.stringify({
+                'arduinoName': "Lamp",
+                'functionality': "On / Off",
+                'status': false
+            })
+        };
+        fetch('http://localhost:8000/change-state', getobj)
+            .then(function (res) {
+                console.log("changed state", res)
+            });
+    } 
+
     return (
 
-        html
-
+        <div className="switchToggle">
+            <input type="checkbox" id={id} onClick={() => performAction(token)}></input>
+            <label htmlFor={id}></label>
+        </div>
     );
 }
 
