@@ -1,0 +1,179 @@
+/* General */
+
+body {
+font-family: 'Montserrat';
+background-color: #ff4c68;
+}
+
+label {
+    font-size: 2.5rem;
+    font-family: 'Montserrat';
+}
+
+.devices {
+    font-size: 2.5rem;
+}
+
+.central-form {
+    margin-top: 30%;
+}
+
+.input-log {
+    font-size: 2.5rem;
+    width: 100%;
+}
+
+.btn-m {
+    font-size: 2.5rem;
+    margin-right: 2%;
+    margin-top: 2%;
+}
+
+/* Navigation Bar */
+
+.navbar {
+    font-family: 'ubuntu';
+    font-weight: bold;
+    padding: 0;
+}
+
+.navbar-brand {
+    font-size: 3.5rem;
+}
+
+.nav-item{
+    padding: 0 18px;
+}
+
+.nav-link {
+    font-size: 3rem;
+}
+
+.navbar-toggler {
+    font-size: 2.5rem;
+}
+
+
+/* Navbar & Footer */
+
+.container-fluid {
+    padding: 1% 15%;
+}
+
+
+/* Groups */
+
+#groups {
+  
+}
+
+.carousel {
+    height: 87vh;
+}
+
+.device-row {
+    margin: 3% auto;
+    padding: 0 3%;
+    /* padding: 5%; */
+    /* background-color: azure; */
+    width: 75%;
+}
+
+
+
+#footer {
+    position: fixed;
+    bottom: 0%;
+    text-align: center;
+    width: 100%;
+    background-color: #ff4c68;
+}
+
+
+h2 {
+    font-family: 'Montserrat';
+    font-weight: bold;
+    font-size: 5rem;
+    text-align: center;
+    /* color: azure; */
+    width: 75%;
+    margin: 5% auto 10%;
+}
+
+h3 {
+    font-family: 'Montserrat';
+    font-weight: bold;
+    font-size: 3.5rem;
+    margin: 0;
+    
+}
+
+/* Download Buttons  */
+
+.download-button {
+    margin: 5% 3% 5% 0;
+}
+
+/* title image */
+
+.title-image {
+    width: 60%;
+    transform: rotate(25deg);
+}
+
+.col {
+    padding: 0;
+}
+
+.btn-lg {
+    height: 100%;
+    size: 5%;
+}
+
+.btn-block {
+    padding: 5% 0 5% 2%;
+    font-weight: bold;
+    font-size: 2.5rem;
+    text-align: left;
+}
+.dropdown-item{
+   
+    font-weight: bold;
+    font-size: 2rem;
+    text-align: left;
+}
+
+option {
+    font-weight: bold;
+    font-size: 1rem;
+    text-align: left;
+}
+
+.custom-select {
+     font-weight: bold;
+    font-size: 2.5rem;
+    text-align: left;
+}
+
+.feature-icon {
+    font-size: 5.5rem;
+    color: #ff4c68;
+    padding: 0%;
+    visibility: visible !important;
+}
+
+.feature-icon:active {
+    color: #c93a50;
+}
+
+
+.btn-action {
+    /* width: 30px;
+    height: 30px;
+    padding: 6px 0px; */
+    /* border-radius: 100%; */
+    text-align: center;
+    padding: 0%;
+    /* font-size: 12px;
+    line-height: 1.42857; */
+}

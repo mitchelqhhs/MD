@@ -1,0 +1,102 @@
+/* General */
+
+body {
+font-family: 'Montserrat';
+background-color: #ff4c68;
+}
+
+label {
+    font-size: 2.5rem;
+    font-family: 'Montserrat';
+}
+
+.devices {
+    font-size: 2.5rem;
+}
+
+.central-form {
+    margin-top: 30%;
+}
+
+.input-log {
+    font-size: 2.5rem;
+    width: 100%;
+}
+
+.btn-m {
+    font-size: 2.5rem;
+    margin-right: 2%;
+    margin-top: 2%;
+}
+
+
+
+/* Download Buttons  */
+
+.download-button {
+    margin: 5% 3% 5% 0;
+}
+
+/* title image */
+
+.title-image {
+    width: 60%;
+    transform: rotate(25deg);
+}
+
+.col {
+    padding: 0;
+}
+
+.btn-lg {
+    height: 100%;
+    size: 5%;
+}
+
+.btn-block {
+    padding: 5% 0 5% 2%;
+    font-weight: bold;
+    font-size: 2.5rem;
+    text-align: left;
+}
+.dropdown-item{
+   
+    font-weight: bold;
+    font-size: 2rem;
+    text-align: left;
+}
+
+option {
+    font-weight: bold;
+    font-size: 1rem;
+    text-align: left;
+}
+
+.custom-select {
+     font-weight: bold;
+    font-size: 2.5rem;
+    text-align: left;
+}
+
+.feature-icon {
+    font-size: 5.5rem;
+    color: #ff4c68;
+    padding: 0%;
+    visibility: visible !important;
+}
+
+.feature-icon:active {
+    color: #c93a50;
+}
+
+
+.btn-action {
+    /* width: 30px;
+    height: 30px;
+    padding: 6px 0px; */
+    /* border-radius: 100%; */
+    text-align: center;
+    padding: 0%;
+    /* font-size: 12px;
+    line-height: 1.42857; */
+}

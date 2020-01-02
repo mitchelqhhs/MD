@@ -1,0 +1,41 @@
+/* Navigation Bar */
+
+.navbar {
+    font-family: 'ubuntu';
+    font-weight: bold;
+    padding: 0;
+}
+
+.navbar-brand {
+    font-size: 2rem;
+    font-family: 'ubuntu';
+    font-weight: bold;
+}
+
+.nav-item{
+    padding: 0 18px;
+}
+
+.nav-link {
+    font-size: 1.5rem;
+     font-weight: bold;
+    font-family: 'ubuntu';
+}
+
+.navbar-toggler {
+    font-size: 1.5rem;
+}
+
+/* Navbar & Footer */
+
+.container-fluid {
+    padding: 1% 10%;
+}
+
+.h4 {
+     font-family: 'ubuntu';
+    font-weight: bold;
+    padding: 0;
+     font-size: 2rem;
+}
+
