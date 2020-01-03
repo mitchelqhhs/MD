@@ -16,13 +16,13 @@ const Menu = ( { onRouteChange }) => {
                 <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
                     <ul className="navbar-nav ml-auto">
                         <li className="nav-item">
-                            <h3 className="nav-link" onClick={() => onRouteChange('options')}>Options</h3>
+                            <h3 className="nav-link" onClick={() => onRouteChange('options')}>Opties</h3>
                         </li>
                         <li className="nav-item">
-                            <h3 href="#foo" className="nav-link" onClick={() => onRouteChange('groups')}>Groups</h3>
+                            <h3 className="nav-link" onClick={() => onRouteChange('groups')}>Groepen</h3>
                         </li>
                         <li className="nav-item">
-                            <h3 href="#foo" className="nav-link" onClick={() => onRouteChange('login')}>Log Out</h3>
+                            <h3 className="nav-link" onClick={() => onRouteChange('login')}>Log Uit</h3>
                         </li>
                     </ul>
                 </div>

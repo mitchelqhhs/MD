@@ -11,12 +11,17 @@
 
 .switchToggle {
    width: auto;
-   margin: 0 auto;
-    margin-left: 20%;
+   margin: 0;
+}
+
+
+.box {
+    height: 30px;
+    margin: auto;
 }
 
 input {
-     text-align: center;
+    text-align: center;
     margin: auto;
 }
 

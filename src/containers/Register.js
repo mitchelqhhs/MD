@@ -21,10 +21,9 @@ class Register extends React.Component {
         this.onRouteChange("login");
     }
 
-
     render() {
         return (
-            <div>
+            <div className="auth">
                 <h2>Register</h2>
                 <form onSubmit={this.handleSubmit}>
 
@@ -45,22 +44,18 @@ class Register extends React.Component {
                     </div>
                     <h3> </h3>
 
-                    <div className="row">
-                        <div className="col col-sm-8">
-                            <div className="row">
+                    <div className="row buttonrow">
 
-                                <div className="col col-sm-4">
-                                    <input type="submit" value="Register" className="btn btn-dark" />
-                                </div>
-                                <div className="col col-sm-5">
-                                    <input onClick={this.goToLogin} type="button" value="Login" className="btn btn-dark" />
-                                </div>
-                            </div>
-
+                        <div className="col col-7">
+                            <input type="submit" value="Register" className="btn btn-dark" />
                         </div>
+                        <div className="col col-1">
+                        </div>
+                        <div className="col col-4">
+                            <input onClick={this.goToLogin} type="button" value="Login" className="btn btn-light" />
+                        </div>
+
                     </div>
-
-
 
                 </form>
             </div>

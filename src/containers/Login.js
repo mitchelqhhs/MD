@@ -18,14 +18,14 @@ class Login extends React.Component {
         this.login(this.username.current.value, this.password.current.value)
     }
 
-    goToRegister(event){
+    goToRegister(event) {
         this.onRouteChange("register");
     }
 
 
     render() {
         return (
-            <div>
+            <div className="auth">
                 <h2>Login</h2>
                 <form onSubmit={this.handleSubmit}>
 
@@ -42,23 +42,21 @@ class Login extends React.Component {
                         <h3>Password:</h3>
                     </div>
                     <div className="col-sm-4">
-                    <input type="password" className="form-control form-control-lg" ref={this.password}></input>
+                        <input type="password" className="form-control form-control-lg" ref={this.password}></input>
                     </div>
-                    <h3> </h3>
 
-                    <div className="row">
-                        <div className="col col-sm-8">
-                            <div className="row">
-                               
-                                <div className="col col-sm-4">
-                                    <input type="submit" value="Login" className="btn btn-dark" />
-                                </div>
-                                <div className="col col-sm-5">
-                                    <input onClick={this.goToRegister} type="button" value="Register" className="btn btn-dark" />
-                                </div>
-                            </div>
-                      
+
+                    <div className="row buttonrow">
+
+                        <div className="col col-7">
+                            <input type="submit" value="Login" className="btn btn-dark" />
                         </div>
+                        <div className="col col-1">
+                        </div>
+                        <div className="col col-4">
+                            <input onClick={this.goToRegister} type="button" value="Register" className="btn btn-light" />
+                        </div>
+                        
                     </div>
 
 

@@ -30,6 +30,8 @@ const Device = ({ device, group, groups, token }) => {
                     <Dropdown
                         groups={groups}
                         selection={group}
+                        token={token}
+                        arduino={device}
                     />
                 </div>
             </div>

@@ -1,19 +1,12 @@
 import React from 'react';
-import inputField from '../components/inputField';
-
 
 class AddGroupRow extends React.Component {
     constructor(props) {
         super(props);
         this.token = props.token;
-
-        this.newName = React.createRef();
-     
+        this.newName = React.createRef();     
         this.addGroup = this.addGroup.bind(this);
-    
-        // this.timerSet = false;
     }
-
  
     addGroup() {
 
@@ -40,12 +33,12 @@ class AddGroupRow extends React.Component {
     render() {
         return (
 
-            <div className="row device-row">
-                <div className="col col-8">
-                    <input type="text" className="btn btn-light btn-device" ref={this.newName} defaultValue="<GroepNaam>" />
+            <div className="row group-row">
+                <div className="col col-7">
+                    <input type="text" className="btn btn-light btn-group" ref={this.newName} defaultValue="<GroepNaam>" />
                 </div>
                 <div className="col col-4">
-                    <button type="button" className="btn btn-action btn-light" onClick={() => this.addGroup()}>Toevoegen</button>
+                    <button type="button" className="btn btn-add btn-light" onClick={() => this.addGroup()}>Toevoegen</button>
                 </div>
             </div>
 
