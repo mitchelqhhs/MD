@@ -6,32 +6,54 @@ class Slider extends React.Component {
     constructor(props) {
         super(props);
         this.token = props.token;
-        // this.onRouteChange = props.onRouteChange;
-        // this.handleSubmit = this.handleSubmit.bind(this);
-        // this.goToLogin = this.goToLogin.bind(this);
-        // this.username = React.createRef();
+        this.arduino = props.arduino;
         this.value = React.createRef();
         this.changeState = this.changeState.bind(this);
+        this.changeValue = this.changeValue.bind(this);
+        this.timerSet = false;
     }
 
+    changeState(token) {
 
+        let value = this.value.current.value;
+        let name = this.arduino.arduinoName;
 
-changeState(token){
-    console.log("changing state " + this.value.current.value);
-}
+        var getobj = {
+            method: 'PUT',
+            headers: {
+                authorization: "bearer " + token
+            },
+            body: JSON.stringify({
+                'naam': name,
+                'waarde': value
+            })
+        };
+        
+        fetch('http://localhost:8000/change-state', getobj)
+            .then(function (res) {
+                console.log("changed state of " + name + " to " + value, res)
+            });
+    }
 
-    // handleSubmit(event) {
-    //     event.preventDefault();
-    //     this.register(this.username.current.value, this.password.current.value)
-    // }
+    setTimer(token) {
+        if (!this.timerSet) {
+            this.timerSet = true;
+            let timerId = setInterval(() => this.changeState(token), 2000);
+            setTimeout(() => { clearInterval(timerId); this.timerSet = false; }, 2000);
+        }
+    }
+
+    changeValue(token) {
+        console.log("new value: " + this.value.current.value);
+        this.setTimer(token);
+    }
 
     render() {
         return (
             <div className="slidecontainer">
-                <input type="range" min="1" step="1" max="100" defaultValue="30" className="slider" onChange={() => this.changeState(this.token)} id="myRange" ref={this.value}></input>
+                <input type="range" min="1" step="1" max="100" defaultValue="30" className="slider" onChange={() => this.changeValue(this.token)} id="myRange" ref={this.value}></input>
             </div>
         );
-    
     }
 
 }

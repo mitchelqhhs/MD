@@ -3,62 +3,6 @@ import SetStateButton from '../components/SetStateButton';
 
 const DeviceRow = ({ arduino, setSelectedDevice, token }) => {
 
-    const changeState = (token) => {
-        var getobj = {
-            method: 'PUT',
-            headers: {
-                authorization: "bearer " + token
-            },
-            body: JSON.stringify({
-                'arduinoName': "Lamp",
-                'functionality': "On / Off",
-                'status': false
-            })
-        };
-        fetch('http://localhost:8000/change-state', getobj)
-            .then(function (res) {
-                console.log("changed state", res)   
-            });
-    } 
-
-
-    // const changeState = (token) => {
-    //     var getobj = {
-    //         method: 'GET',
-    //         headers: {
-    //             authorization: "bearer " + token
-    //         }
-    //         // body: JSON.stringify({
-    //         //     'arduinoName': "Lamp",
-    //         //     'functionality': "On / Off",
-    //         //     'status': false
-    //         // })
-    //     };
-    //     fetch('http://localhost:8000/device/Lamp', getobj)
-    //         .then(function (res) {
-    //             console.log("changed state", res)
-    //         });
-
-    // } 
-
-
-    // const changeState = (token) => {
-    //     var getobj = {
-    //         method: 'PUT',
-    //         headers: {
-    //             authorization: "bearer " + token
-    //         },
-    //         body: JSON.stringify({
-    //             'arduinoName': "Lamp",
-    //             'quickAction': 1
-    //         })
-    //     };
-    //     fetch('http://localhost:8000/lamp/setaction', getobj)
-    //         .then(function (res) {
-    //             console.log("changed state", res)
-    //         });
-    // } 
-
     let index = parseInt(arduino.quickaction);
 
     return (
@@ -76,7 +20,5 @@ const DeviceRow = ({ arduino, setSelectedDevice, token }) => {
         </div>
     );
 }
-
-{/* <button type="button" className="btn btn-action btn-light" onClick={() => changeState(token)}>O</button> */}
 
 export default DeviceRow;

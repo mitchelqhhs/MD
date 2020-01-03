@@ -80,7 +80,7 @@ class App extends Component {
   // ========================================= AUTHENTICATION =========================================
 
   login = (username, password) => {
-    console.log("logging in: " + username + " with password: " + password);
+    // console.log("logging in: " + username + " with password: " + password);
     var obj = {
       method: 'POST',
       body: JSON.stringify({
@@ -97,8 +97,13 @@ class App extends Component {
     fetch('http://localhost:8000/login', obj)
       .then(function (res) {
         if (res) {
-          console.log(res);
-          return res.json();
+          if (res.status === 401){
+            console.log("login failed, please check your credentials")
+          } else {
+            console.log(res);
+            return res.json();
+          }
+         
         }
       })
       .then(function (resJson) {
@@ -110,7 +115,7 @@ class App extends Component {
           }
         }
       })
-      .catch(error => console.log(error));
+      // .catch(error => console.log(error));
   }
 
 
@@ -238,6 +243,7 @@ class App extends Component {
         return res.json();
       })
       .then(function (resJson) {
+        console.log(resJson);
         setData(resJson);
       });
   }
